@@ -2,7 +2,7 @@
 @[CConst (binding ="MILLIS_PER_TICK", header = "env.h")]
 extern const MILLIS_PER_TICK: nat32
 
-@[CFunction (source = "env.h")]
+@[CFunction (binding = "setLight($1)", header = "env.h")]
 extern function setLight(ledVal: [3]nat8)
 
 activity fade_colors(ledVal_in : [3]nat8)(ledVal_out : [3]nat8 )
@@ -20,7 +20,6 @@ activity fade_colors(ledVal_in : [3]nat8)(ledVal_out : [3]nat8 )
         await true
         ledIdx = ledIdx + 1
     until ledIdx > 2 end
-
 end
 
 @[EntryPoint]

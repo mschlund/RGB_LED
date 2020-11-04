@@ -1,6 +1,6 @@
 
-#include "env.h"
 extern "C" {
+    #include "env.h"
     #include "RGB_LED.h"
 }
 
@@ -9,7 +9,7 @@ extern "C" {
 #define GREEN 5
 #define RED 6
 
-void blc_RGB_LED_setLight(const blc_nat8 blc_ledVal[3])
+void setLight(const blc_nat8 blc_ledVal[3])
 {
     analogWrite(RED, blc_ledVal[0]);
     analogWrite(GREEN, blc_ledVal[1]);
